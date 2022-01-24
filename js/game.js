@@ -1,15 +1,15 @@
 class Game {
     constructor(){
+        this.fishingResult = new FishingResult()
         this.background = new Background()
         this.player = new Player()
         this.fishing = new Fishing()
         this.loadingScreen= new LoadingScreen()
-        this.fishingResult = new FishingResult() 
-        this.loadingScreenState=false
+         
+        this.loadingScreenState=true
         this.backgroundImage
         this.fishingState = true // extra interface while fishing
-        this.fishingSuccess = false
-        this.fishingResult=false //Result screen after fishing
+        this.fishingResultScreen=false //Result screen after fishing
         
     }
     preload(){
@@ -27,8 +27,8 @@ class Game {
         if(this.loadingScreenState){
             this.loadingScreen.draw()
 
-        }else if(this.fishingResult){
-            this.fishingResult.draw()
+        }else if(this.fishingResultScreen){
+            game.fishingResult.draw()
         }
         else
         {

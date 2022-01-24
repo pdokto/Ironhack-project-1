@@ -1,4 +1,4 @@
-class Fishing {
+class Fishing{
     constructor(){
        
         this.fishCoughtTotal = 0
@@ -16,7 +16,7 @@ class Fishing {
         this.progressBarWidth = 10
         this.progressBarHeight = this.fishingBarHeight
         this.timer=0
-        this.progress=-250
+        this.progress=-200
         this.color=''
 
         //fish
@@ -53,8 +53,8 @@ class Fishing {
         //the fish
         //randomnizing fish type
         //randomizing fishs movement (direction and speed). Later iteration= fish movement over attributes from different fish types
-        this.fishSpeed=5
-        this.fishIntervall=3
+        this.fishSpeed=4
+        this.fishIntervall=4
        
         //counting frames for seconds based mechanic
         if (frameCount %60 ==0){
@@ -99,8 +99,8 @@ class Fishing {
         // end fishing if fish is being cought
         if ((this.progressBarHeight+this.progress)>=350){
             this.fishCoughtTotal ++
-            game.fishingSuccess=true
-            game.fishingResult=true
+            game.fishingResult.success=true
+            game.fishingResultScreen=true
            game.fishingState=false
             
             
