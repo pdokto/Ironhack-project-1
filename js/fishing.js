@@ -90,7 +90,10 @@ class Fishing{
         } else {
             this.progress --
         }
-        
+        //fishing pole display
+        image(game.fishingPole, game.player.x+8, game.player.y, 17, 27)
+
+
         //end fishing of progress bar reaches zero
         if (this.progressBarHeight+this.progress<=0){
             game.fishingState=false

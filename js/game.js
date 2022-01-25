@@ -27,6 +27,8 @@ class Game {
 
         this.playerImage= loadImage('assets/player/_down_walk1.png')
 
+        this.fishingPole= loadImage('assets/objects/fishingPole.png')
+
         this.playerImageWalkDown[0]=loadImage('assets/player/_down_walk1.png')
         this.playerImageWalkDown[1]=loadImage('assets/player/_down_walk2.png')
         this.playerImageWalkDown[2]=loadImage('assets/player/_down_walk3.png')

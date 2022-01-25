@@ -65,6 +65,7 @@ class Player {
 
         if(this.x >600 && keyIsDown(69) && this.facing==='east'){
             game.fishingState=true
+            //image(game.fishingPole, this.x+8, this.y, 17, 27)
             game.fishing.hookBarPosition = 275  //set these to default again so it doesn't feel like  player is continuing his former fishing
             game.fishing.progress=-200
             game.fishing.progressBarY=400
