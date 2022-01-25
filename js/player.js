@@ -6,7 +6,7 @@ class Player {
         this.height =36
         this.speed =2
         this.i=0
-        
+        this.facing='south'
 
         this.inventory = [
                             {name: 'fish', amount: 0, posX: 0 , posY:0 , imgHeight:0 ,imgWidth:0},
@@ -24,7 +24,7 @@ class Player {
                 game.playerImage = game.playerImageWalkDown[this.i%game.playerImageWalkDown.length]
                 this.i++
             }
-
+            this.facing='south'
         }
         
         //moveup
@@ -35,7 +35,7 @@ class Player {
                 game.playerImage = game.playerImageWalkUp[this.i%game.playerImageWalkUp.length]
                 this.i++
             }
-            
+            this.facing='north'
         }
 
         //moveleft
@@ -46,6 +46,7 @@ class Player {
                 game.playerImage = game.playerImageWalkLeft[this.i%game.playerImageWalkLeft.length]
                 this.i++
             }
+            this.facing='west'
         }
 
         //moveright
@@ -56,13 +57,13 @@ class Player {
                 game.playerImage = game.playerImageWalkRight[this.i%game.playerImageWalkRight.length]
                 this.i++
             }
-        
+            this.facing='east'
         }
         
         image(game.playerImage, this.x, this.y, this.width, this.height)
        
 
-        if(this.x >600 && keyIsDown(69)){
+        if(this.x >600 && keyIsDown(69) && this.facing==='east'){
             game.fishingState=true
             game.fishing.hookBarPosition = 275  //set these to default again so it doesn't feel like  player is continuing his former fishing
             game.fishing.progress=-200
