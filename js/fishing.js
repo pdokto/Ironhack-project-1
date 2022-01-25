@@ -1,12 +1,13 @@
 class Fishing{
     constructor(){
        
-        this.fishCoughtTotal = 0
+        //this.fishCoughtTotal = 0
         this.fishingBarX = 700
         this.fishingBarY = 50
         this.fishingBarWidth = 50
         this.fishingBarHeight = 350 
-        this.hookBarPosition = 0//relative to left top corner of fishing bar
+        //hookbar
+        this.hookBarPosition = 275//relative to left top corner of fishing bar
         this.hookBarHeight = 75
         this.gravity = 0.09
         this.velocity = 0
@@ -20,8 +21,8 @@ class Fishing{
         this.color=''
 
         //fish
-        this.fishY = Math.floor(Math.random() * 326)+50 //starting position
-        this.newFishY = Math.floor(Math.random() *326) +50  // randomized movement position
+        this.fishY =275 //starting position
+        this.newFishY = (Math.floor(Math.random() *326) +50) // randomized movement position 
     }
     
     draw(){
@@ -47,7 +48,7 @@ class Fishing{
         }
         //lower border
         if(this.hookBarPosition >= 275){
-            this.hookBarPosition = 274.9 //bugfix hookbar stuck to bottom when it was 275
+            this.hookBarPosition = 274.8 //bugfix hookbar stuck to bottom when it was 275
             this.velocity =- this.velocity*0.7 //damped bump on bottom
         }
         //the fish
@@ -75,17 +76,17 @@ class Fishing{
         image(game.fishImage, this.fishingBarX, this.fishY, 50, 25)
         
         //progressbar 
-        if(this.progress<-275) this.color='RED'
-         else if(this.progress<-200 ) this.color=('ORANGE')
-         else if(this.progress<-125 ) this.color=('YELLOW')
-         else if(this.progress>-50) this.color=('GREEN')
+        if(this.progress<-275) this.color='RED'  //there is also ja p5 function for color grading
+         else if(this.progress<-200 ) this.color='ORANGE'
+         else if(this.progress<-125 ) this.color='YELLOW'
+         else if(this.progress>-50) this.color='GREEN'
         
         
         fill(this.color)
         rect (this.progressBarX, this.progressBarY, this.progressBarWidth, -(this.progressBarHeight+this.progress))
         //check if fish is inside hookbar and change progressbar height
         if (this.fishY > (this.fishingBarY + this.hookBarPosition) && this.fishY < (this.hookBarPosition +50 + this.hookBarHeight)){
-            this.progress +=1.2
+            this.progress +=1.0 //filling rate 
         } else {
             this.progress --
         }
@@ -98,10 +99,11 @@ class Fishing{
         }
         // end fishing if fish is being cought
         if ((this.progressBarHeight+this.progress)>=350){
-            this.fishCoughtTotal ++
+           // this.fishCoughtTotal ++
+           game.player.inventory[0].amount+=1
             game.fishingResult.success=true
             game.fishingResultScreen=true
-           game.fishingState=false
+           game.fishingState=false //disables fishing ui
             
             
         }
