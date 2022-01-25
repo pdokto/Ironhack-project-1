@@ -16,6 +16,9 @@ class Game {
         this.playerImageWalkUp=[]
         this.playerImageWalkLeft =[]
         this.playerImageWalkRight =[]
+
+        this.cowImage=[]
+        this.currentCowImage
     }
     preload(){
         this.backgroundImage =[
@@ -51,9 +54,21 @@ class Game {
         this.playerImageWalkUp[4]=loadImage('assets/player/_up_walk5.png')
         this.playerImageWalkUp[5]=loadImage('assets/player/_up_walk6.png')
         
-        
-        
+        this.cowImage[0]=loadImage('assets/objects/cow_eat1.png')
+        this.cowImage[1]=loadImage('assets/objects/cow_eat2.png')
+        this.cowImage[2]=loadImage('assets/objects/cow_eat3.png')
+        this.cowImage[3]=loadImage('assets/objects/cow_eat4.png')
+        this.cowImage[4]=loadImage('assets/objects/cow_eat3.png')
+        this.cowImage[5]=loadImage('assets/objects/cow_eat4.png')
+        this.cowImage[6]=loadImage('assets/objects/cow_eat3.png')
+        this.cowImage[7]=loadImage('assets/objects/cow_eat4.png')
+        this.cowImage[8]=loadImage('assets/objects/cow_eat3.png')
+        this.cowImage[9]=loadImage('assets/objects/cow_eat4.png')
+        this.cowImage[10]=loadImage('assets/objects/cow_eat2.png')
+
+        this.currentCowImage=loadImage('assets/objects/cow_eat1.png')
         this.fishImage= loadImage('assets/fish/fishA.png')
+        this.milkBottleImage=loadImage('assets/objects/MilkPot.png')
     }
     
     
@@ -74,13 +89,20 @@ class Game {
             if (this.fishingState===true){
                 game.fishing.draw()
             }
-            for (let i=0; i<game.player.inventory.length; i++){
-                let localX=50, localY=50
-                if (game.player.inventory[i].amount >0){
-                    image(this.fishImage, localX, localY, 50, 25)
-                    fill(255)
-                    text(`${game.player.inventory[i].amount}`, (localX +25), (localY + 30))
-                }
+            //inventory display
+            
+            
+            let localX=5, localY=50
+            if (game.player.inventory[0].amount >0){
+                image(this.fishImage, localX, localY, 50, 25)
+                fill('BLACK')
+                text(`${game.player.inventory[0].amount}`, (localX +40), (localY + 30))
+                
+            }
+            if (game.player.inventory[1].amount >0){
+                image(this.milkBottleImage, localX+20, localY+50, 16, 16)
+                fill('BLACK')
+                text(`${game.player.inventory[1].amount}`, (localX +40), (localY + 80))
             }
          }
         
