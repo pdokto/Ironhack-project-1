@@ -1,7 +1,12 @@
 class Day {
     constructor(){
-        this.squirrelActive=true
+        this.squirrelActive=false
         this.currentDay=1
         this.squidActive=true
+        this.weather='sunny'
+    }
+
+    randomizeNewDay(){
+
     }
 }

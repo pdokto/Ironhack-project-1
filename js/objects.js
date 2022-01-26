@@ -8,9 +8,9 @@ class Objects {
         this.cowCenterX=this.cowX +this.cowWidth/2
         this.cowCenterY=this.cowY + this.cowHeight/2
         this.alreadyMilked=false
-        this.catRng
         this.catX=300
         this.catY=100
+        this.catStatus='cleaning'
         this.plants=[{spot:1, planted:false, day:0, posX:100, posY:186, type:'corn', daysToRipe:3},
                      {spot:2, planted:false, day:0, posX:164, posY:186, type:'corn', daysToRipe:3},
                      {spot:3, planted:false, day:0, posX:228, posY:186, type:'corn', daysToRipe:3},
@@ -23,7 +23,7 @@ class Objects {
     draw(){
         //plants
 
-        // && game.day.currentDay -this.plants[i].day <=this.plants[i].daysToRipe
+        // checks if something was planted and if yes sorts the correct growing status picture
         for (let i=0; i < this.plants.length;i++){
             if(this.plants[i].planted==true && game.day.currentDay -this.plants[i].day <=this.plants[i].daysToRipe){
                 if(this.plants[i].type==='corn'){
@@ -53,16 +53,40 @@ class Objects {
         //animation
         if (frameCount %30 ==0){ //modulo 60 >> do it every one second
             game.currentCowImage = game.cowImage[this.i%game.cowImage.length]
-            if(game.day.squirrelActive===true){
-
+            if(game.day.squirrelActive===true && game.day.weather=='sunny'){
+                this.catStatus='hunting'
+                game.currentCatImage = game.catHuntingImage[this.i%game.catHuntingImage.length]
+                game.currentSquirrelImage=game.squirrelImage[this.i%game.squirrelImage.length]
             }
-            game.currentCatImage = game.catImage[this.i%game.catImage.length]
+            if(game.day.squirrelActive===false && game.day.weather=='sunny'){
+                this.catStatus='cleaning'
+                game.currentCatImage = game.catImage[this.i%game.catImage.length]
+            }
+
+            if(game.day.weather==='rainy'){
+                this.catStatus='sleeping'
+                game.currentCatImage = game.catSleepingImage[this.i%game.catSleepingImage.length]
+            }
             this.i++
         
         }
         //image(game.currentCornImage, this.plants[0].posX, this.plants[0].posY-10, 16, 16)
         image(game.currentCowImage, this.cowX, this.cowY, this.cowWidth, this.cowHeight)
-        image(game.currentCatImage, this.catX, this.catY, 16, 16) //cat position on fallen tree
+        if(game.day.squirrelActive===false && game.day.weather=='sunny'){
+            image(game.currentCatImage, this.catX, this.catY, 16, 16) //cat position on fallen tree
+        }
+        if(game.day.squirrelActive===true && game.day.weather=='sunny'){
+            image(game.currentCatImage, this.catX-80, this.catY, 16, 16) //cat position next to squirrel
+            image(game.currentSquirrelImage, 240, 70, 32, 16 )
+        }
+        if(game.day.weather==='rainy'){
+            image(game.currentCatImage, 440, 430, 16, 16) //sleeping under cow
+        }
+
+
+
+
+
         if(game.day.squidActive===true){
             image(game.squidImage, 700, 150, 25, 25)     
         }

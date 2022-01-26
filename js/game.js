@@ -20,8 +20,14 @@ class Game {
 
         this.cowImage=[]
         this.currentCowImage
+        this.squirrelImage=[]
+        this.currentSquirrelImage
+        this.foxImage=[]
+        this.currentFoxImage
 
         this.catImage=[]
+        this.catHuntingImage=[]
+        this.catSleepingImage=[]
         
         this.melonImage=[]
         this.currentPlantImage=[]
@@ -82,10 +88,25 @@ class Game {
         this.catImage[2]=loadImage('assets/objects/cat_clean3.png')
         this.catImage[3]=loadImage('assets/objects/cat_clean4.png')
 
+        this.catHuntingImage[0]=loadImage('assets/objects/cat_touch1.png')
+        this.catHuntingImage[1]=loadImage('assets/objects/cat_touch2.png')
+        this.catHuntingImage[2]=loadImage('assets/objects/cat_touch3.png')
+        this.catHuntingImage[3]=loadImage('assets/objects/cat_touch4.png')
+        this.catHuntingImage[4]=loadImage('assets/objects/cat_touch5.png')
+        this.catHuntingImage[5]=loadImage('assets/objects/cat_touch6.png')
+
+        this.catSleepingImage[0]=loadImage('assets/objects/cat_sleep1.png')
+        this.catSleepingImage[1]=loadImage('assets/objects/cat_sleep2.png')
+        this.catSleepingImage[2]=loadImage('assets/objects/cat_sleep3.png')
+        this.catSleepingImage[3]=loadImage('assets/objects/cat_sleep4.png')
+
         this.currentCatImage=loadImage('assets/objects/cat_clean1.png')
         this.currentCowImage=loadImage('assets/objects/cow_eat1.png')
+
         this.fishImage= loadImage('assets/fish/fishA.png')
         this.milkBottleImage=loadImage('assets/objects/MilkPot.png')
+        this.cornInventoryImage=loadImage('assets/objects/corn_inv.png')
+        this.melonIventoryImage=loadImage('assets/objects/melon_inv.png')
 
         this.cornImage[0]=loadImage('assets/objects/corn_state1.png')
         this.cornImage[1]=loadImage('assets/objects/corn_state2.png')
@@ -108,7 +129,9 @@ class Game {
         this.currentPlantImage[4]=loadImage('assets/objects/melon_state1.png')
         this.currentPlantImage[5]=loadImage('assets/objects/melon_state1.png')
         
-
+        this.squirrelImage[0]=loadImage('assets/objects/squirrel_eat1.png')
+        this.squirrelImage[1]=loadImage('assets/objects/squirrel_eat2.png')
+        this.currentSquirrelImage=loadImage('assets/objects/squirrel_eat1.png')
     }
     
     
@@ -133,17 +156,25 @@ class Game {
             
             text(`Day: ${game.day.currentDay}`, 15, 15)
             let localX=5, localY=50
+            
             if (game.player.inventory[0].amount >0){
                 image(this.fishImage, localX, localY, 50, 25)
                 fill('BLACK')
                 text(`${game.player.inventory[0].amount}`, (localX +40), (localY + 30))
                 
             }
+            
             if (game.player.inventory[1].amount >0){
                 image(this.milkBottleImage, localX+20, localY+50, 16, 16)
                 fill('BLACK')
                 text(`${game.player.inventory[1].amount}`, (localX +40), (localY + 80))
             }
+            
+            if (game.player.inventory[2].amount >0){
+
+            }
+                
+
          }
         
     }

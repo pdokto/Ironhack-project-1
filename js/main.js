@@ -20,10 +20,11 @@ function keyPressed() {
     if (keyCode ===32 && game.fishingResultScreen==true){
         game.fishingResultScreen=false
     }
-    
+    //what needs to be done for a newly generated day
     if(keyCode===69 && dist(game.player.playerCenterX, game.player.playerCenterY, 400, 120)<25){
         game.day.currentDay+=1
-        console.log('i pressed the key close to the door')
+        game.objects.alreadyMilked=false
+        //console.log('i pressed the key close to the door')
     } 
     
     if(keyCode===69 && dist(game.player.playerCenterX, game.player.playerCenterY, game.objects.catX, game.objects.catY)<40){
