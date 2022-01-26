@@ -8,7 +8,7 @@ class Game {
         this.objects = new Objects()
         this.day= new Day()
          
-        this.loadingScreenState=false
+        this.loadingScreenState=true
         this.backgroundImage
         this.fishingState = false // extra interface while fishing
         this.fishingResultScreen=false //Result screen after fishing
@@ -153,8 +153,8 @@ class Game {
                 game.fishing.draw()
             }
             //inventory display
-            
-            text(`Day: ${game.day.currentDay}`, 15, 15)
+            fill('BLACK')
+            text(`Day: ${game.day.currentDay}`, 30, 15)
             let localX=5, localY=50
             
             if (game.player.inventory[0].amount >0){
