@@ -39,7 +39,7 @@ class Game {
             {src: loadImage('./assets/background/map.png')}
         ]
 
-        this.playerImage = loadImage('./assets/player/_down_walk1.png')
+        this.playerImage = loadImage('./assets/player/down_walk1.png')
 
         this.fishingPole = loadImage('./assets/fish/fishingPole.png')
         this.squidImage = loadImage('./assets/fish/Squid.gif') 
