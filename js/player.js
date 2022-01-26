@@ -82,7 +82,7 @@ class Player {
             //console.log(game.player.inventory[1].amount)
         }
     
-        console.log(game.day.currentDay)   
+        
      }
      
     

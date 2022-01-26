@@ -23,6 +23,10 @@ class Game {
 
         this.catImage=[]
         
+        this.melonImage=[]
+        this.currentPlantImage=[]
+        this.cornImage=[]
+        
     }
     preload(){
         this.backgroundImage =[
@@ -82,6 +86,29 @@ class Game {
         this.currentCowImage=loadImage('assets/objects/cow_eat1.png')
         this.fishImage= loadImage('assets/fish/fishA.png')
         this.milkBottleImage=loadImage('assets/objects/MilkPot.png')
+
+        this.cornImage[0]=loadImage('assets/objects/corn_state1.png')
+        this.cornImage[1]=loadImage('assets/objects/corn_state2.png')
+        this.cornImage[2]=loadImage('assets/objects/corn_state4.png')
+        this.cornImage[3]=loadImage('assets/objects/corn_state4.png')
+        this.cornImage[4]=loadImage('assets/objects/corn_state4.png')
+        this.cornImage[5]=loadImage('assets/objects/corn_state4.png')
+
+        this.melonImage[0]=loadImage('assets/objects/melon_state1.png')
+        this.melonImage[1]=loadImage('assets/objects/melon_state2.png')
+        this.melonImage[2]=loadImage('assets/objects/melon_state3.png')
+        this.melonImage[3]=loadImage('assets/objects/melon_state4.png')
+        this.melonImage[4]=loadImage('assets/objects/melon_state4.png')
+        this.melonImage[5]=loadImage('assets/objects/melon_state4.png')
+
+        this.currentPlantImage[0]=loadImage('assets/objects/corn_state1.png')
+        this.currentPlantImage[1]=loadImage('assets/objects/corn_state1.png')
+        this.currentPlantImage[2]=loadImage('assets/objects/corn_state1.png')
+        this.currentPlantImage[3]=loadImage('assets/objects/melon_state1.png')
+        this.currentPlantImage[4]=loadImage('assets/objects/melon_state1.png')
+        this.currentPlantImage[5]=loadImage('assets/objects/melon_state1.png')
+        
+
     }
     
     

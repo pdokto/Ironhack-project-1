@@ -21,7 +21,33 @@ class Objects {
     }
     
     draw(){
-        //this.catRng=(Math.floor(Math.random()*11))
+        //plants
+
+        // && game.day.currentDay -this.plants[i].day <=this.plants[i].daysToRipe
+        for (let i=0; i < this.plants.length;i++){
+            if(this.plants[i].planted==true && game.day.currentDay -this.plants[i].day <=this.plants[i].daysToRipe){
+                if(this.plants[i].type==='corn'){
+                    game.currentPlantImage[i]=game.cornImage[game.day.currentDay-this.plants[i].day]                
+                    
+                }  
+                if(this.plants[i].type==='melon'){
+                    game.currentPlantImage[i]=game.melonImage[game.day.currentDay-this.plants[i].day]
+                } 
+                image(game.currentPlantImage[i], this.plants[i].posX, this.plants[i].posY-10, 16, 16)
+            }
+            if(this.plants[i].planted==true && game.day.currentDay -this.plants[i].day >this.plants[i].daysToRipe){
+                if(this.plants[i].type==='corn'){
+                    game.currentPlantImage[i]=game.cornImage[3]                
+                    
+                }  
+                if(this.plants[i].type==='melon'){
+                    game.currentPlantImage[i]=game.melonImage[4]
+                } 
+                image(game.currentPlantImage[i], this.plants[i].posX, this.plants[i].posY-10, 16, 16)
+            }
+        
+        
+        }
         
         //cow
         //animation
@@ -34,17 +60,7 @@ class Objects {
             this.i++
         
         }
-        
-        circle(100,186, 50)
-        circle(164,186, 50)
-        circle(228,186, 50)
-        circle(100,290, 50)
-        circle(164,290, 50)
-        circle(228,290, 50)
-        circle(400,120, 20)
-
-
-        //distance calc for interaction menu
+        //image(game.currentCornImage, this.plants[0].posX, this.plants[0].posY-10, 16, 16)
         image(game.currentCowImage, this.cowX, this.cowY, this.cowWidth, this.cowHeight)
         image(game.currentCatImage, this.catX, this.catY, 16, 16) //cat position on fallen tree
         if(game.day.squidActive===true){
