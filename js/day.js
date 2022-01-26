@@ -6,7 +6,7 @@ class Day {
         this.weather='sunny'
     }
 
-    randomizeNewDay(){
+    randomiseNewDay(){
 
     }
 }
