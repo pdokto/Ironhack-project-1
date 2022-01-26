@@ -9,9 +9,10 @@ class Player {
         this.facing='south'
 
         this.inventory = [
-                            {name: 'fish', amount: 0, posX: 0 , posY:0 , imgHeight:0 ,imgWidth:0},
-                            {name: 'milk', amount: 0}
-     ]
+                            {name: 'fish', amount: 0},
+                            {name: 'milk', amount: 0},
+                            {name: 'corn', amount: 0},
+                            {name: 'melon', amount: 0},]
     }
 
     draw(){
@@ -61,8 +62,8 @@ class Player {
         }
         
         image(game.playerImage, this.x, this.y, this.width, this.height)
-       
-
+        
+        //start fishing
         if(this.x >600 && keyIsDown(69) && this.facing==='east'){
             game.fishingState=true
             game.fishing.hookBarPosition = 275  //set these to default again so it doesn't feel like  player is continuing his former fishing
@@ -72,16 +73,17 @@ class Player {
         this.playerCenterX = this.x + this.width/2             //want to use center for distance calc 
         this.playerCenterY = this.y + this.height/2             //when used in constructor values wont change
         
-        console.log(dist(this.playerCenterX, this.playerCenterY, game.objects.cowCenterX, game.objects.cowCenterY))
+        //console.log(dist(this.playerCenterX, this.playerCenterY, game.objects.cowCenterX, game.objects.cowCenterY))
 
-         
+         //milking the cow. keyIsDown will work because you can only get 1 milk per day anyway
         if(dist(this.playerCenterX, this.playerCenterY, game.objects.cowCenterX, game.objects.cowCenterY) <(this.height + game.objects.cowWidth) && keyIsDown(69) && game.objects.alreadyMilked===false) { 
             game.player.inventory[1].amount+=1
             game.objects.alreadyMilked=true
-            console.log(game.player.inventory[1].amount)
+            //console.log(game.player.inventory[1].amount)
         }
-            
+    
+        console.log(game.day.currentDay)   
      }
-
+     
     
 }

@@ -6,6 +6,7 @@ class Game {
         this.fishing = new Fishing()
         this.loadingScreen= new LoadingScreen()
         this.objects = new Objects()
+        this.day= new Day()
          
         this.loadingScreenState=false
         this.backgroundImage
@@ -21,7 +22,7 @@ class Game {
         this.currentCowImage
 
         this.catImage=[]
-        this.currentCatImage
+        
     }
     preload(){
         this.backgroundImage =[
@@ -103,7 +104,7 @@ class Game {
             }
             //inventory display
             
-            
+            text(`Day: ${game.day.currentDay}`, 15, 15)
             let localX=5, localY=50
             if (game.player.inventory[0].amount >0){
                 image(this.fishImage, localX, localY, 50, 25)
@@ -119,4 +120,5 @@ class Game {
          }
         
     }
+    
 }
