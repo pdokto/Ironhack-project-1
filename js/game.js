@@ -19,15 +19,19 @@ class Game {
 
         this.cowImage=[]
         this.currentCowImage
+
+        this.catImage=[]
+        this.currentCatImage
     }
     preload(){
         this.backgroundImage =[
             {src: loadImage('assets/background/map.png')}
         ]
 
-        this.playerImage= loadImage('assets/player/_down_walk1.png')
+        this.playerImage = loadImage('assets/player/_down_walk1.png')
 
-        this.fishingPole= loadImage('assets/objects/fishingPole.png')
+        this.fishingPole = loadImage('assets/fish/fishingPole.png')
+        this.squidImage = loadImage('assets/fish/Squid.gif') 
 
         this.playerImageWalkDown[0]=loadImage('assets/player/_down_walk1.png')
         this.playerImageWalkDown[1]=loadImage('assets/player/_down_walk2.png')
@@ -68,6 +72,12 @@ class Game {
         this.cowImage[9]=loadImage('assets/objects/cow_eat4.png')
         this.cowImage[10]=loadImage('assets/objects/cow_eat2.png')
 
+        this.catImage[0]=loadImage('assets/objects/cat_clean1.png')
+        this.catImage[1]=loadImage('assets/objects/cat_clean2.png')
+        this.catImage[2]=loadImage('assets/objects/cat_clean3.png')
+        this.catImage[3]=loadImage('assets/objects/cat_clean4.png')
+
+        this.currentCatImage=loadImage('assets/objects/cat_clean1.png')
         this.currentCowImage=loadImage('assets/objects/cow_eat1.png')
         this.fishImage= loadImage('assets/fish/fishA.png')
         this.milkBottleImage=loadImage('assets/objects/MilkPot.png')

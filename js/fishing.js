@@ -52,7 +52,6 @@ class Fishing{
             this.velocity =- this.velocity*0.7 //damped bump on bottom
         }
         //the fish
-        //randomnizing fish type
         //randomizing fishs movement (direction and speed). Later iteration= fish movement over attributes from different fish types
         this.fishSpeed=4
         this.fishIntervall=4
