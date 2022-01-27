@@ -32,12 +32,19 @@ class Game {
         this.melonImage=[]
         this.currentPlantImage=[]
         this.cornImage=[]
+
+        this.rainDarkness
+        this.rainDrops
+        this.rainDropHit
         
     }
     preload(){
         this.backgroundImage =[
             {src: loadImage('./assets/background/map.png')}
         ]
+        this.rainDarkness =loadImage('./assets/background/rain_overlay.png')
+        this.rainDrops=loadImage('./assets/background/rain.png')
+        this.rainDropHit=loadImage('./assets/background/rain_floor.png')
 
         this.playerImage = loadImage('./assets/player/down_walk1.png')
 
@@ -188,7 +195,7 @@ class Game {
                 image(this.melonIventoryImage, localX+20, localY+130, 16, 16)
                 text(`${game.player.inventory[3].amount}`, (localX +40), (localY + 160))
             }
-
+            if(this.day.weather==='rainy') this.day.draw()
          }
         
     }

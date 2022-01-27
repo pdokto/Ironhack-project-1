@@ -1,10 +1,16 @@
 class FishingResult{
         constructor(){
             this.success=false
-            this.fishMessagesArr= ['message a',
-                                'message b',
-                                'message c']
+            this.fishMessagesArr= ['Oh boy, is it huge!',
+                                'Wow, so slimy!',
+                                'The cat would love it',
+                                'A slight disappointment compared to how hard it was to reel in.',
+                                'Your mom would love it.',
+                                'Is this even fish?']
+                                
             this.fishMessage='placeholder'
+            this.size
+            this.weight  //every fish species has a size-weight ratio
                                
         }
         draw(){
