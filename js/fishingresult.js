@@ -1,20 +1,22 @@
 class FishingResult{
         constructor(){
             this.success=false
-            this.fishMessage= ['message a',
+            this.fishMessagesArr= ['message a',
                                 'message b',
                                 'message c']
+            this.fishMessage='placeholder'
                                
         }
         draw(){
             background(51);
             textAlign(CENTER);
-            // text(this.fishMessage[randomize()], 400, 100);
+            text(`${this.fishMessage}`, 400, 100);
             text('press <space> to continue', 400, 20);
             
         }
         
         randomize(){
-            return random (0, this.fishMessage.length)
+            this.fishMessage =this.fishMessagesArr[Math.floor(Math.random()*(this.fishMessagesArr.length+1))]
+            
         }
     }

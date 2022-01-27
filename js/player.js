@@ -64,12 +64,14 @@ class Player {
         image(game.playerImage, this.x, this.y, this.width, this.height)
         
         //start fishing
-        if(this.x >600 && keyIsDown(69) && this.facing==='east'){
+        if(this.x >600 && keyIsDown(69) && this.facing==='east' && game.fishingState===false){
             game.fishingState=true
             game.fishing.hookBarPosition = 275  //set these to default again so it doesn't feel like  player is continuing his former fishing
             game.fishing.progress=-200
             game.fishing.progressBarY=400
+            game.fishingResult.randomize()
         }
+
         this.playerCenterX = this.x + this.width/2             //want to use center for distance calc 
         this.playerCenterY = this.y + this.height/2             //when used in constructor values wont change
         

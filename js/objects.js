@@ -85,10 +85,15 @@ class Objects {
 
 
 
-
-
         if(game.day.squidActive===true){
             image(game.squidImage, 700, 150, 25, 25)     
         }
+
+        if(game.day.foxActive===true){
+            game.currentFoxImage=game.foxImage[this.i%game.foxImage.length]
+            image(game.currentFoxImage, 60, 20, 32, 16)     
+        
+        }
+
     }
 }

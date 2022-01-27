@@ -24,11 +24,12 @@ function keyPressed() {
     if(keyCode===69 && dist(game.player.playerCenterX, game.player.playerCenterY, 400, 120)<25){
         game.day.currentDay+=1
         game.objects.alreadyMilked=false
+        game.day.randomiseNewDay()
         //console.log('i pressed the key close to the door')
     } 
     
     if(keyCode===69 && dist(game.player.playerCenterX, game.player.playerCenterY, game.objects.catX, game.objects.catY)<40){
-        if(game.player.inventory[0].amount>0 && game.day.weather=='sunny'){
+        if(game.player.inventory[0].amount>0 && game.day.weather=='sunny' && game.day.squirrelActive===false){
             game.player.inventory[0].amount-= 1
         }
         console.log('i played with the cat')

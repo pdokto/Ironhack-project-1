@@ -132,6 +132,15 @@ class Game {
         this.squirrelImage[0]=loadImage('./assets/objects/squirrel_eat1.png')
         this.squirrelImage[1]=loadImage('./assets/objects/squirrel_eat2.png')
         this.currentSquirrelImage=loadImage('./assets/objects/squirrel_eat1.png')
+
+        this.foxImage[0]=loadImage('./assets/objects/fox_sleep1.png')
+        this.foxImage[1]=loadImage('./assets/objects/fox_sleep2.png')
+        this.foxImage[2]=loadImage('./assets/objects/fox_sleep3.png')
+        this.foxImage[3]=loadImage('./assets/objects/fox_sleep4.png')
+        this.foxImage[4]=loadImage('./assets/objects/fox_sleep5.png')
+        this.foxImage[5]=loadImage('./assets/objects/fox_sleep6.png')
+
+        this.currentFoxImage=loadImage('./assets/objects/fox_sleep1.png')
     }
     
     
