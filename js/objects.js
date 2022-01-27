@@ -45,8 +45,6 @@ class Objects {
                 } 
                 image(game.currentPlantImage[i], this.plants[i].posX, this.plants[i].posY-10, 16, 16)
             }
-        
-        
         }
         
         //cow
@@ -70,15 +68,19 @@ class Objects {
             this.i++
         
         }
-        //image(game.currentCornImage, this.plants[0].posX, this.plants[0].posY-10, 16, 16)
+        
         image(game.currentCowImage, this.cowX, this.cowY, this.cowWidth, this.cowHeight)
+        
+        //cat positioning and different animations
         if(game.day.squirrelActive===false && game.day.weather=='sunny'){
-            image(game.currentCatImage, this.catX, this.catY, 16, 16) //cat position on fallen tree
+            image(game.currentCatImage, this.catX , this.catY , 16 , 16) //cat position on fallen tree
         }
+        
         if(game.day.squirrelActive===true && game.day.weather=='sunny'){
             image(game.currentCatImage, this.catX-80, this.catY, 16, 16) //cat position next to squirrel
             image(game.currentSquirrelImage, 240, 70, 32, 16 )
         }
+        
         if(game.day.weather==='rainy'){
             image(game.currentCatImage, 440, 430, 16, 16) //sleeping under cow
         }

@@ -36,7 +36,6 @@ function keyPressed() {
         if(game.player.inventory[0].amount>0 && game.day.weather=='sunny' && game.day.squirrelActive===false){
             game.player.inventory[0].amount-= 1
         }
-        console.log('i played with the cat')
     } 
 
     for(plantSpot in game.objects.plants){
