@@ -171,9 +171,14 @@ class Game {
             }
             
             if (game.player.inventory[2].amount >0){
-
+                image(this.cornInventoryImage, localX+20, localY+90, 16, 16)
+                text(`${game.player.inventory[2].amount}`, (localX +40), (localY + 120))
             }
-                
+            
+            if (game.player.inventory[3].amount >0){
+                image(this.melonIventoryImage, localX+20, localY+130, 16, 16)
+                text(`${game.player.inventory[3].amount}`, (localX +40), (localY + 160))
+            }
 
          }
         
