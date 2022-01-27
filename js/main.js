@@ -28,7 +28,9 @@ function keyPressed() {
     } 
     
     if(keyCode===69 && dist(game.player.playerCenterX, game.player.playerCenterY, game.objects.catX, game.objects.catY)<40){
-        
+        if(game.player.inventory[0].amount>0 && game.day.weather=='sunny'){
+            game.player.inventory[0].amount-= 1
+        }
         console.log('i played with the cat')
     } 
 
