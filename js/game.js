@@ -163,7 +163,7 @@ class Game {
         }
         else
         {
-             
+            
             this.background.draw()
             this.player.draw()
             this.objects.draw()
@@ -204,6 +204,9 @@ class Game {
                     this.rainSound.play()
                 }
                 this.day.draw()}
+            if(this.day.weather==='sunny') {
+                this.rainSound.stop()
+            }    
          }
         
     }
