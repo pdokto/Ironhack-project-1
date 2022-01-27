@@ -28,6 +28,7 @@ class Day {
         this.randomNumber=Math.floor(Math.random()*99)+1
         if (this.randomNumber<=66) this.weather='sunny'
         else this.weather='rainy'
+        
     }
 
     //draw function for weather effect

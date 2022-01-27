@@ -65,7 +65,7 @@ class Fishing{
             this.newFishY = Math.floor(Math.random() *(326)) +50
         }
         
-        if (this.newFishY >= this.fishY){
+        if (this.newFishY > this.fishY){
             this.fishY +=this.fishSpeed
         }
 

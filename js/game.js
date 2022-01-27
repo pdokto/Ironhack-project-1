@@ -39,6 +39,8 @@ class Game {
         
     }
     preload(){
+        this.rainSound= loadSound('./assets/rain.mp3')
+       
         this.backgroundImage =[
             {src: loadImage('./assets/background/map.png')}
         ]
@@ -161,7 +163,7 @@ class Game {
         }
         else
         {
-        
+             
             this.background.draw()
             this.player.draw()
             this.objects.draw()
@@ -169,6 +171,8 @@ class Game {
                 game.fishing.draw()
             }
             //inventory display
+            textSize(20)
+            stroke(5)
             fill('BLACK')
             text(`Day: ${game.day.currentDay}`, 30, 15)
             let localX=5, localY=50
@@ -195,7 +199,11 @@ class Game {
                 image(this.melonIventoryImage, localX+20, localY+130, 16, 16)
                 text(`${game.player.inventory[3].amount}`, (localX +40), (localY + 160))
             }
-            if(this.day.weather==='rainy') this.day.draw()
+            if(this.day.weather==='rainy') {
+                if (!this.rainSound.isPlaying()){
+                    this.rainSound.play()
+                }
+                this.day.draw()}
          }
         
     }
